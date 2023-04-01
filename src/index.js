@@ -1,31 +1,35 @@
-const path=require('path');
-const HtmlWebpackPlugin =require ('html-webpack-plugin');
-
-module.exports={
-    entry : './src/index.js',
-    output :{
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'main.js'
-    },
-    resolve: {
-        extensions:['.js']
-    },
-    module:{
-        rules:[
-            {
-                test: /\.js?$/,
-                esclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader'
-                }
-            } 
-        ]
-    },
-    plugins: [
-        new HtmlWebpackPlugin({
-            inject: true,
-            template: './public/index.html',
-            filename:'./index.html'
-        })
-    ]
-}
+const $links = document.getElementById('links');
+const $name = document.querySelector('h1');
+const data = {
+    name: "Daniel Sammuel Cuayahuitl Perez",
+    nickname: "gndx",
+    description: "...",
+    avatar: "...",
+    social: [
+      {
+        name: "twitter",
+        url: "https://twitter.com/",
+        username: "",
+      },
+      {
+        name: "instagram",
+        url: "https://instagram.com/",
+        username: "",
+      },
+    ],
+    links: [
+      {
+        name: "blog",
+        url: "https://example.com/",
+        color: "red",
+        emoji: "📖",
+      },
+      {
+        name: "podcast",
+        url: "https://example.com/",
+        color: "yellow",
+        emoji: "💬",
+      },
+    ],
+    footer: "Mexico",
+  };
